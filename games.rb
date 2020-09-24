@@ -1,9 +1,12 @@
-# require_relative 'dispatch'
+require_relative 'dispatch'
 require_relative 'menu'
 
 welcome
 
+cmd = nil
+
 begin
     menu
     cmd = gets.chomp.downcase.strip
-end until cmd == 'q'
+    dispatch(cmd)
+end until cmd == 'q' 

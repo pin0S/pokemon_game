@@ -69,13 +69,5 @@ class Game
     def display_winner
         @score[:player] > @score[:computer] ? (puts "player wins #{@score[:player]} to #{@score[:computer]}") : (puts "computer wins #{@score[:computer]} to #{@score[:player]}")
     end
+
 end
-
-
-game = Game.new("3")
-begin
-    game.get_player_move
-    puts game.get_computer_move
-    game.check_winner
-    game.end_of_game ? nil : game.display_round_score
-end until game.end_of_game
