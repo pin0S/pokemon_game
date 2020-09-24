@@ -79,4 +79,3 @@ begin
     game.check_winner
     puts game.game_count
 end until game.end_of_game
-game.display_winner
