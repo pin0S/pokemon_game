@@ -1,6 +1,8 @@
 
 class Player
 
+    attr_reader :name, :records
+
     def initialize(name, pin)
         @name = name
         @pin = pin
@@ -8,3 +10,4 @@ class Player
     end
 
 end
+
