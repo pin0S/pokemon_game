@@ -1,10 +1,10 @@
 require 'csv'
 require_relative 'player'
 
-puts "What is your username?"
-username = gets.chomp.downcase.strip
-puts "What is your pin?"
-pin = gets.chomp.to_i
+# puts "What is your username?"
+# username = gets.chomp.downcase.strip
+# puts "What is your pin?"
+# pin = gets.chomp.to_i
 
 def check_for_username(username, pin)
     table = CSV.parse(File.read('database.csv'), headers: true) 
@@ -12,6 +12,7 @@ def check_for_username(username, pin)
     if table.by_col[0].include?(username)
         puts 'That name is already taken please try another name'
     else
+        puts 'That name is free, entering it into the record books now'
         add_new_user(username, pin)
     end
 end
@@ -30,4 +31,3 @@ def add_new_user(username, pin)
     end
 end
         
-check_for_username(username, pin)
