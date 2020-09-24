@@ -26,6 +26,7 @@ def add_new_user(username, pin)
     CSV.open('database.csv', "a") do |csv|
         csv << [username, pin, 0, 0]
         #append username, pin and score to csv
+        #hold here
     end
 end
         
