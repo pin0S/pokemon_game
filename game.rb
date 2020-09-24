@@ -55,9 +55,9 @@ class Game
         end
     end
     
-    def check_score
-      puts "Player: #{@score[:player]}"
-      puts "Comp: #{@score[:computer]}"
+    def display_round_score
+      puts "Player: #{@score[:player]} vs. Comp: #{@score[:computer]}"
+      puts "Rounds left #{@game_count - @number_of_games}"
     end
 
     def end_of_game
@@ -72,10 +72,10 @@ class Game
 end
 
 
-#game = Game.new("3")
+game = Game.new("3")
 begin
     game.get_player_move
     puts game.get_computer_move
     game.check_winner
-    puts game.game_count
+    game.end_of_game ? nil : game.display_round_score
 end until game.end_of_game
