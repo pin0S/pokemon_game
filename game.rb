@@ -72,7 +72,7 @@ class Game
 end
 
 
-game = Game.new("3")
+#game = Game.new("3")
 begin
     game.get_player_move
     puts game.get_computer_move
