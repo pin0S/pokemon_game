@@ -9,5 +9,17 @@ describe 'check usernames' do
         new_user = check_for_username('Ash_K', 4444)
         expect('That name is free, entering it into the record books now')
     end
+    it 'should output username not found' do
+        not_existing = check_user_credentials('Brock', '2343')
+        expect('username not found')
+    end
+    it 'should output wrong pin' do
+        existing_wrong_pin = check_user_credentials('Peter', '333')
+        expect('incorrect pin, try again')
+    end
+    it 'should output username correct pin' do
+        existing_wrong_pin = check_user_credentials('Peter', '3333')
+        expect('correct pin')
+    end
 end
 

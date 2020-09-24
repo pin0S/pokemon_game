@@ -17,9 +17,22 @@ def check_for_username(username, pin)
     end
 end
 
-def check_user_credentials(username = nil, pin: nil)
-    rows = CSV.foreach('database.csv') do |row|
-        #do something
+def check_user_credentials(username = nil, pin = nil)
+    table = CSV.parse(File.read('database.csv'), headers: true) 
+    for rows in table
+        if rows['username'] == username
+            puts 'username found'
+        else
+            puts 'username not found'
+            break
+        end
+        if rows['pin'] == pin && rows['username'] == username
+            puts 'correct pin'
+            break
+        else
+            puts 'incorrect pin, try again'
+            break
+        end
     end
 end
 
@@ -30,4 +43,3 @@ def add_new_user(username, pin)
         #hold here
     end
 end
-        
