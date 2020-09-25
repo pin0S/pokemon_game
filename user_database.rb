@@ -1,10 +1,7 @@
 require 'csv'
 require_relative 'player'
 
-# puts "What is your username?"
-# username = gets.chomp.downcase.strip
-# puts "What is your pin?"
-# pin = gets.chomp.to_i
+@player = nil
 
 def check_for_username(username, pin)
     table = CSV.parse(File.read('database.csv'), headers: true) 
@@ -20,18 +17,13 @@ end
 def check_user_credentials(username = nil, pin = nil)
     table = CSV.parse(File.read('database.csv'), headers: true) 
     for rows in table
-        if rows['username'] == username
-            puts 'username found'
-        else
-            puts 'username not found'
-            break
-        end
         if rows['pin'] == pin && rows['username'] == username
-            puts 'correct pin'
+            @player = Player.new(username, pin, records = {wins: rows['wins'], losses: rows['losses']})
             break
-        else
+        elsif rows['username'] != username 
+            puts 'incorrect username'
+        elsif rows['pin'] != pin
             puts 'incorrect pin, try again'
-            break
         end
     end
 end
@@ -39,7 +31,6 @@ end
 def add_new_user(username, pin)
     CSV.open('database.csv', "a") do |csv|
         csv << [username, pin, 0, 0]
-        #append username, pin and score to csv
-        #hold here
     end
+    @player = Player.new(username, pin)
 end
