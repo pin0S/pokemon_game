@@ -10,24 +10,28 @@ def dispatch(cmd)
             game.get_player_move
             puts game.get_computer_move
             game.check_winner
-            game.end_of_game ? nil : game.display_round_score
+            game.end_of_game ? game.display_winner : game.display_round_score
         end until game.end_of_game
+        update_records(game)
+        p @player.records
     when '3'
         game = Game.new(3)
         begin
             game.get_player_move
             puts game.get_computer_move
             game.check_winner
-            game.end_of_game ? nil : game.display_round_score
+            game.end_of_game ? game.display_winner : game.display_round_score
         end until game.end_of_game
+        game.update_player_record
     when '5'
         game = Game.new(5)
         begin
             game.get_player_move
             puts game.get_computer_move
             game.check_winner
-            game.end_of_game ? nil : game.display_round_score
+            game.end_of_game ? game.display_winner : game.display_round_score
         end until game.end_of_game
+        game.update_player_record
     when 'b'
         puts "leader board"
     when 's'

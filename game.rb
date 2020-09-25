@@ -1,3 +1,6 @@
+require_relative 'player'
+require_relative 'user_database'
+
 class Game
 
     STARTERS = {Charmander: "Fire", 
@@ -5,7 +8,7 @@ class Game
                 Bulbasaur: "Grass"
             }
 
-    attr_reader :game_count
+    attr_reader :game_count, :score
 
     def initialize(number_of_games)
         @number_of_games = number_of_games.to_i
@@ -56,8 +59,8 @@ class Game
     end
     
     def display_round_score
-      puts "Player: #{@score[:player]} vs. Comp: #{@score[:computer]}"
-      puts "Rounds left #{@game_count - @number_of_games}"
+        puts "Player: #{@score[:player]} vs. Comp: #{@score[:computer]}"
+        puts "Rounds left #{@game_count - @number_of_games}"
     end
 
     def end_of_game

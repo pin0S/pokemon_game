@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "username": "peter",
+      "pin": 3333,
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "username": "mike",
+      "pin": 3333,
+      "wins": 0,
+      "losses": 0
+    },
+    {
+      "username": "ask_k",
+      "pin": 4444,
+      "wins": 8,
+      "losses": 0
+    },
+    {
+      "username": "yogo",
+      "pin": "4444",
+      "wins": 0,
+      "losses": 0
+    }
+  ]
+}
