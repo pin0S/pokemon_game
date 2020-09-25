@@ -30,37 +30,37 @@ class Game
 
     def check_winner
         if @choice == 'fire' && @c_choice == "water"
-            puts "Water beats fire, you lose"
+            puts "Water beats Fire, you lose"
             @game_count += 1
             @score[:computer] += 1
         elsif @choice == 'water' && @c_choice == "grass"
-            puts "Grass beats water, you lose"
+            puts "Grass beats Water, you lose"
             @game_count += 1
             @score[:computer] += 1
         elsif @choice == 'grass' && @c_choice == "fire"
-            puts "Fire beats grass, you lose"
+            puts "Fire beats Grass, you lose"
             @game_count += 1
             @score[:computer] += 1
         elsif @choice == 'water' && @c_choice == "fire"
-            puts "Water beats fire, you win"
+            puts "Water beats Fire, you win"
             @game_count += 1
             @score[:player] += 1
         elsif @choice == 'grass' && @c_choice == "water"
-            puts "Grass beats water, you win"
+            puts "Grass beats Water, you win"
             @game_count += 1
             @score[:player] += 1
         elsif @choice == 'fire' && @c_choice == "grass"
-            puts "Fire beats grass, you win"
+            puts "Fire beats Grass, you win"
             @game_count += 1
             @score[:player] += 1
         else
-            puts "It's a draw #{@choice} and #{@c_choice} cancel each other out"
+            puts "It's a draw #{@choice.capitalize} and #{@c_choice.capitalize} cancel each other out"
         end
     end
     
     def display_round_score
         puts "Player: #{@score[:player]} vs. Comp: #{@score[:computer]}"
-        puts "Rounds left #{@game_count - @number_of_games}"
+        puts "Rounds left #{@game_count-@number_of_games}"
     end
 
     def end_of_game

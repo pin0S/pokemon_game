@@ -1,6 +1,6 @@
 require_relative 'dispatch'
 require_relative 'menu'
-require_relative 'json_updater'
+require_relative 'user_database'
 
 #user authenticated loop
 
@@ -14,6 +14,7 @@ begin
         username = gets.chomp.downcase.strip
         puts "What is your pin?"
         pin = gets.chomp.strip
+        p pin.class
         check_for_username(username, pin)
     else 
         puts "What is your username?"
