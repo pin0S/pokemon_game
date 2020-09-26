@@ -9,3 +9,5 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "rspec", "~> 3.9"
 
 gem "json", "~> 2.3"
+
+gem "text-table", "~> 1.2"

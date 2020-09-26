@@ -16,6 +16,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
+    text-table (1.2.4)
 
 PLATFORMS
   ruby
@@ -23,6 +24,7 @@ PLATFORMS
 DEPENDENCIES
   json (~> 2.3)
   rspec (~> 3.9)
+  text-table (~> 1.2)
 
 BUNDLED WITH
    2.1.4

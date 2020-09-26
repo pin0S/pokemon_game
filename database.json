@@ -5,7 +5,7 @@
       "pin": "3333",
       "p_wins": 0,
       "p_losses": 0,
-      "o_wins": 0,
+      "o_wins": 3,
       "o_losses": 0
     },
     {
@@ -13,15 +13,15 @@
       "pin": "3333",
       "p_wins": 0,
       "p_losses": 0,
-      "o_wins": 0,
-      "o_losses": 0,
+      "o_wins": 1,
+      "o_losses": 0
     },
     {
       "username": "ask_k",
       "pin": "4444",
       "p_wins": 0,
       "p_losses": 0,
-      "o_wins": 0,
+      "o_wins": 2,
       "o_losses": 0
     }
   ]

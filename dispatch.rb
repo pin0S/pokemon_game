@@ -36,6 +36,7 @@ def dispatch(cmd)
         update_overall_records(game)
     when 'b'
         puts "leader board"
+        get_leaderboard
     when 's'
         puts 'stats'
     end
