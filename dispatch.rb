@@ -35,10 +35,14 @@ def dispatch(cmd)
         update_points_records(game)
         update_overall_records(game)
     when 'b'
-        puts "leader board"
         get_leaderboard
     when 's'
-        puts 'stats'
+        get_user_stats
+    else
+        unless cmd.include?(['1','3','5','b','s','q'])
+            puts "That is not a valid option please try again"
+            cmd = gets.chomp.downcase.strip 
+        end
     end
 end
 

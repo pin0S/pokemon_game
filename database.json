@@ -3,10 +3,10 @@
     {
       "username": "peter",
       "pin": "3333",
-      "p_wins": 0,
-      "p_losses": 0,
-      "o_wins": 3,
-      "o_losses": 0
+      "p_wins": 6,
+      "p_losses": 5,
+      "o_wins": 6,
+      "o_losses": 1
     },
     {
       "username": "mike",
