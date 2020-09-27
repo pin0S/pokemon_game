@@ -3,12 +3,17 @@ require_relative 'game'
 
 
 def dispatch(cmd)
-    unless ['1','3','5','b','s','q'].include?(cmd)
+    puts `clear`
+    unless ['1','3','5','b','s','q','r'].include?(cmd)
         puts "That is not a valid option please try again"
         cmd = gets.chomp.downcase.strip
     end
         
     case cmd
+    when 'r'
+        rules
+        STDIN.getch  #Waits for user input (Any Key)
+        puts `clear` # Clears screen after
     when '1'
         game = Game.new(1)
         begin
@@ -41,8 +46,12 @@ def dispatch(cmd)
         update_overall_records(game)
     when 'b'
         get_leaderboard
+        STDIN.getch  #Waits for user input (Any Key)
+        puts `clear` # Clears screen after
     when 's'
         get_user_stats
+        STDIN.getch  #Waits for user input (Any Key)
+        puts `clear` # Clears screen after
     end
 
 end

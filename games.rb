@@ -1,22 +1,29 @@
 require_relative 'dispatch'
 require_relative 'menu'
 require_relative 'user_database'
+require_relative 'rules'
+
+require 'io/console'
 
 #user authenticated loop
 
+
 begin
-    puts
+    puts `clear`
     puts 'Is this your first time Playing Pokemon Rumble? (y/n)'
     puts 
     answer = gets.chomp.downcase.strip
     if answer == 'y'
+        puts
         puts "What is your username?"
         username = gets.chomp.downcase.strip
         puts "What is your 4 digit pin?"
         pin = gets.chomp.strip
+        puts `clear`
         unless pin.length == 4
             puts "Pin is not 4 digits...re-enter: "
             pin = gets.chomp.strip
+            puts `clear`
         end
         check_for_username(username, pin)
     else 
@@ -32,13 +39,13 @@ begin
     end
 end until end_loop(username, pin) == true
 
-begin
-    welcome
-    any_key = gets.chomp.downcase
-end until any_key.length > 0 || any_key == nil
+#print welcome to screen
+puts `clear`
+welcome
 
 begin
     menu
     cmd = gets.chomp.downcase.strip
     dispatch(cmd)
 end until cmd == 'q' 
+

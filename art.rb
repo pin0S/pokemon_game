@@ -1,28 +1,25 @@
 require 'pastel'
 
-def baulbasaur
+def bulbasaur_art
     pastel = Pastel.new(eachline: "\n")
     pastel.alias_color(:funky, :green, :bold)
-    File.readlines("./art/bulbasaur.txt") do |line|
+    File.open("./art/bulbasaur.txt").each do |line|
         puts pastel.on_black(line)
     end
 end
 
-def squirtle
+def squirtle_art
     pastel = Pastel.new(eachline: "\n")
     pastel.alias_color(:funky, :blue, :bold)
-    File.readlines("./art/squirtle.txt") do |line|
+    File.open("./art/squirtle.txt").each do |line|
         puts pastel.on_black(line)
     end
 end
 
-def charmander
+def charmander_art
     pastel = Pastel.new(eachline: "\n")
     pastel.alias_color(:funky, :red, :bold)
-    File.readlines("./art/charmander.txt") do |line|
+    File.open("./art/charmander.txt").each do |line|
         puts pastel.on_black(line)
     end
 end
-
-
-
