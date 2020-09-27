@@ -12,20 +12,30 @@ begin
     if answer == 'y'
         puts "What is your username?"
         username = gets.chomp.downcase.strip
-        puts "What is your pin?"
+        puts "What is your 4 digit pin?"
         pin = gets.chomp.strip
-        p pin.class
+        unless pin.length == 4
+            puts "Pin is not 4 digits...re-enter: "
+            pin = gets.chomp.strip
+        end
         check_for_username(username, pin)
     else 
         puts "What is your username?"
         username = gets.chomp.downcase.strip
         puts "What is your pin?"
         pin = gets.chomp.strip
+        until pin.length == 4
+            puts "Pin is not 4 digits"
+            pin = gets.chomp.strip
+        end
         check_user_credentials(username, pin)
     end
 end until end_loop(username, pin) == true
 
-welcome
+begin
+    welcome
+    any_key = gets.chomp.downcase
+end until any_key.length > 0 || any_key == nil
 
 begin
     menu

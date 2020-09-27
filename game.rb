@@ -1,5 +1,8 @@
+require 'colorize'
+
 require_relative 'player'
 require_relative 'user_database'
+require_relative 'art'
 
 class Game
 
@@ -19,17 +22,38 @@ class Game
     end
 
     def get_player_move
-        puts 'Choose your starter - {fire | water | grass}'
+        puts 'Choose your starter by typing - {fire | water | grass}'
         @choice = gets.chomp.downcase.strip
+        until ['fire', 'water', 'grass'].include?(@choice)
+            puts 'Not a vaild start...try again'
+            @choice = gets.chomp.downcase.strip
+        end
     end
 
     def get_computer_move
         @c_choice = STARTERS.values.sample.downcase
     end
 
+    def countdown
+        print "FIRE".colorize(:red) 
+        sleep(0.5)
+        print ", WATER".colorize(:blue)
+        sleep(0.5)
+        print ", GRASS".colorize(:green)
+        sleep(0.5)
+        print "...GO!".colorize(:yellow)
+        sleep(0.2)
+        puts
+    end
+
 
     def check_winner
+        
+        countdown
+
         if @choice == 'fire' && @c_choice == "water"
+            puts "You choose... "
+            puts "#{charmander}"
             puts "Water beats Fire, you lose"
             @game_count += 1
             @score[:computer] += 1

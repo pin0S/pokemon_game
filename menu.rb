@@ -26,9 +26,6 @@ def welcome
                 THIS IS A GAME OF FIRE WATER AND GRASS. IN YOUR WORLD YOU MIGHT CALL IT ROCK, PAPER, 
                 SCISSORS. ARE YOU READY TO RUMBLE ON YOUR JOURNEY TO BECOME A POKEMON MASTER?
                                 ".colorize(:green)
-    puts
-    puts
-    puts
 
 end
 #menu display

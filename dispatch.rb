@@ -3,6 +3,11 @@ require_relative 'game'
 
 
 def dispatch(cmd)
+    unless ['1','3','5','b','s','q'].include?(cmd)
+        puts "That is not a valid option please try again"
+        cmd = gets.chomp.downcase.strip
+    end
+        
     case cmd
     when '1'
         game = Game.new(1)
@@ -38,11 +43,7 @@ def dispatch(cmd)
         get_leaderboard
     when 's'
         get_user_stats
-    else
-        unless cmd.include?(['1','3','5','b','s','q'])
-            puts "That is not a valid option please try again"
-            cmd = gets.chomp.downcase.strip 
-        end
     end
+
 end
 
