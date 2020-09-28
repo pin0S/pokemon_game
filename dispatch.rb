@@ -1,11 +1,5 @@
 # require_relative 'controller'
-require_relative 'game'
-
-def formatter
-    puts "\nPRESS ANY KEY TO RETURN TO MENU".colorize(:green)
-    STDIN.getch  #Waits for user input (Any Key)
-end
-
+require_relative 'models/game'
 
 def dispatch(cmd)
     unless ['1','3','5','b','s','q','r'].include?(cmd)

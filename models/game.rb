@@ -1,8 +1,8 @@
 require 'colorize'
 
-require_relative 'player'
 require_relative 'user_database'
 require_relative 'art'
+require_relative '../views/records'
 
 class Game
 
@@ -22,7 +22,7 @@ class Game
     end
 
     def get_player_move
-        puts 'Choose your starter by typing - {fire | water | grass}'
+        puts 'Choose your starter by typing - {fire | water | grass}'.colorize(:green)
         @choice = gets.chomp.downcase.strip
         until ['fire', 'water', 'grass'].include?(@choice)
             puts 'Not a vaild start...try again'
@@ -52,8 +52,9 @@ class Game
         countdown
 
         if @choice == 'fire' && @c_choice == "water"
+            #how can I turn this into a helper function
             puts "You choose... "
-            puts charmander_art
+            puts "#{charmander_art}"
             sleep(1)
             puts "Computer chooses..."
             puts squirtle_art
@@ -62,6 +63,7 @@ class Game
             @game_count += 1
             @score[:computer] += 1
         elsif @choice == 'water' && @c_choice == "grass"
+            #how can I turn this into a helper function
             puts "You choose... "
             puts squirtle_art
             sleep(1)
@@ -72,6 +74,7 @@ class Game
             @game_count += 1
             @score[:computer] += 1
         elsif @choice == 'grass' && @c_choice == "fire"
+            #how can I turn this into a helper function
             puts "You choose..."
             puts bulbasaur_art
             puts "Computer chooses..."
@@ -80,6 +83,7 @@ class Game
             @game_count += 1
             @score[:computer] += 1
         elsif @choice == 'water' && @c_choice == "fire"
+            #how can I turn this into a helper function
             puts "You choose... "
             puts squirtle_art
             puts "Computer chooses..."
@@ -88,6 +92,7 @@ class Game
             @game_count += 1
             @score[:player] += 1
         elsif @choice == 'grass' && @c_choice == "water"
+            #how can I turn this into a helper function
             puts "You choose... "
             puts bulbasaur_art
             sleep(1)
@@ -98,6 +103,7 @@ class Game
             @game_count += 1
             @score[:player] += 1
         elsif @choice == 'fire' && @c_choice == "grass"
+            #how can I turn this into a helper function
             puts "You choose... "
             puts charmander_art
             sleep(1)

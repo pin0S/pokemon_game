@@ -1,5 +1,11 @@
 # welcome screen
 require 'colorize'
+require 'io/console'
+
+def formatter
+    puts "\nPRESS ANY KEY TO RETURN TO MENU".colorize(:green)
+    STDIN.getch  #Waits for user input (Any Key)
+end
 
 def welcome
 

@@ -1,14 +1,13 @@
 require_relative 'dispatch'
-require_relative 'menu'
-require_relative 'user_database'
-require_relative 'rules'
+require_relative 'views/menu'
+require_relative 'views/rules'
+require_relative 'models/user_database'
 
 require 'io/console'
+require 'colorize'
 require 'ruby2d'
 
-
 #user authenticated loop
-
 
 begin
     puts `clear`
@@ -16,6 +15,7 @@ begin
     puts 
     answer = gets.chomp.downcase.strip
     if answer == 'y'
+        #use helper function for this
         puts
         puts "What is your username?"
         username = gets.chomp.downcase.strip
@@ -29,6 +29,7 @@ begin
         end
         check_for_username(username, pin)
     else 
+        #use helper function for this
         puts "What is your username?"
         username = gets.chomp.downcase.strip
         puts "What is your pin?"
