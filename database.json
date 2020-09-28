@@ -5,8 +5,8 @@
       "pin": "3333",
       "p_wins": 36,
       "p_losses": 47,
-      "o_wins": 26,
-      "o_losses": 29
+      "o_wins": 27,
+      "o_losses": 31
     },
     {
       "username": "mike",
@@ -29,6 +29,22 @@
       "pin": "2222",
       "p_wins": 0,
       "p_losses": 1,
+      "o_wins": 0,
+      "o_losses": 1
+    },
+    {
+      "username": "brock",
+      "pin": "4545",
+      "p_wins": 0,
+      "p_losses": 0,
+      "o_wins": 2,
+      "o_losses": 6
+    },
+    {
+      "username": "pighead",
+      "pin": "1995",
+      "p_wins": 0,
+      "p_losses": 0,
       "o_wins": 0,
       "o_losses": 1
     }
