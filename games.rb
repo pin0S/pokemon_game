@@ -4,6 +4,8 @@ require_relative 'user_database'
 require_relative 'rules'
 
 require 'io/console'
+require 'ruby2d'
+
 
 #user authenticated loop
 

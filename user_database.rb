@@ -1,6 +1,7 @@
 require 'json'
 require 'text-table'
 
+
 require_relative 'player'
 
 @player = nil

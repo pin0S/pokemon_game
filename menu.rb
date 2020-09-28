@@ -45,14 +45,23 @@ end
 
 def menu 
     puts `clear`
-    print  "What would you like to do Trainer? "
-    puts 'options:' 
-    puts '1. See the game rules - (r)'
-    puts '2. Play best of 1 - (1)'
-    puts '3. Play best of 3 - (3)'
-    puts '4. Play best of best of 5 - (5)' 
-    puts '5. See all time leader board - (b)' 
-    puts '6. See your scores and stats (s)' 
-    puts '7. Quit (q)'
+    puts "
+    ███╗   ███╗███████╗███╗   ██╗██╗   ██╗
+    ████╗ ████║██╔════╝████╗  ██║██║   ██║
+    ██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║
+    ██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║
+    ██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝
+    ╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝                                 
+    ".colorize(:blue)
+    puts '
+    What would you like to do Trainer? 
+    options:
+    1. See the game rules - (r)
+    2. Play best of 1 - (1)
+    3. Play best of 3 - (3)
+    4. Play best of best of 5 - (5)
+    5. See all time leader board - (b)
+    6. See your scores and stats (s)
+    7. Quit (q)'.colorize(:green)
 end
 

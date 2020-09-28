@@ -72,22 +72,18 @@ class Game
             @game_count += 1
             @score[:computer] += 1
         elsif @choice == 'grass' && @c_choice == "fire"
-            puts "You choose... "
+            puts "You choose..."
             puts bulbasaur_art
-            sleep(1)
             puts "Computer chooses..."
             puts charmander_art
-            sleep(1)
             puts "Fire beats Grass, you lose"
             @game_count += 1
             @score[:computer] += 1
         elsif @choice == 'water' && @c_choice == "fire"
             puts "You choose... "
             puts squirtle_art
-            sleep(1)
             puts "Computer chooses..."
             puts charmander_art
-            sleep(1)
             puts "Water beats Fire, you win"
             @game_count += 1
             @score[:player] += 1
@@ -118,7 +114,7 @@ class Game
     
     def display_round_score
         puts "Player: #{@score[:player]} vs. Comp: #{@score[:computer]}"
-        puts "Rounds left #{@game_count-@number_of_games}"
+        puts "Rounds left #{@number_of_games-@game_count}"
     end
 
     def end_of_game

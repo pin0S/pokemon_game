@@ -1,19 +1,24 @@
 # require_relative 'controller'
 require_relative 'game'
 
+def formatter
+    puts "\nPRESS ANY KEY TO RETURN TO MENU".colorize(:green)
+    STDIN.getch  #Waits for user input (Any Key)
+end
+
 
 def dispatch(cmd)
-    puts `clear`
     unless ['1','3','5','b','s','q','r'].include?(cmd)
         puts "That is not a valid option please try again"
         cmd = gets.chomp.downcase.strip
     end
+
+    puts `clear`
         
     case cmd
     when 'r'
         rules
-        STDIN.getch  #Waits for user input (Any Key)
-        puts `clear` # Clears screen after
+        formatter
     when '1'
         game = Game.new(1)
         begin
@@ -46,12 +51,10 @@ def dispatch(cmd)
         update_overall_records(game)
     when 'b'
         get_leaderboard
-        STDIN.getch  #Waits for user input (Any Key)
-        puts `clear` # Clears screen after
+        formatter
     when 's'
         get_user_stats
-        STDIN.getch  #Waits for user input (Any Key)
-        puts `clear` # Clears screen after
+        formatter
     end
 
 end
