@@ -12,6 +12,8 @@ class Game
                 bulbasaur: "grass",
                 squritle: "water"   
             }
+    
+    @@battle_music = Music.new('sounds/battle.mp3')
 
     attr_reader :game_count, :score
 
@@ -24,6 +26,7 @@ class Game
     end
 
     def get_player_move
+        @@battle_music.play
         puts 'Choose your starter by typing - {fire | water | grass}'.colorize(:green)
         @choice = gets.chomp.downcase.strip
         until ['fire', 'water', 'grass'].include?(@choice)
@@ -65,11 +68,8 @@ class Game
         if @choice == 'fire' && @c_choice == "water"
             #how can I turn this into a helper function
             puts "You choose... #{charmander_art}"
-            puts ""
-            sleep(1)
             puts "Computer chooses..."
             puts squirtle_art
-            sleep(1)
             puts "Water beats Fire, you lose".white.on_magenta.blink
             computer_wins
         elsif @choice == 'water' && @c_choice == "grass"
@@ -131,6 +131,7 @@ class Game
     def end_of_game
         if @number_of_games == @game_count
             true
+            @@battle_music.stop
         end
     end
 
@@ -138,6 +139,7 @@ class Game
         @score[:player] > @score[:computer] ? (puts "player wins #{@score[:player]} to #{@score[:computer]}") : (puts "computer wins #{@score[:computer]} to #{@score[:player]}")
         puts "PRESS ANY KEY TO RETURN TO THE MENU".colorize(:green)
         STDIN.getch
+        
     end
 
 end

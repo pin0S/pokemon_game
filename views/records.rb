@@ -1,6 +1,3 @@
-require 'text-table'
-require 'json'
-
 def get_leaderboard
     file = File.read('./database.json')
     data_hash = JSON.parse(file)

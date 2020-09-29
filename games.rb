@@ -2,6 +2,7 @@ require_relative 'dispatch'
 require_relative 'views/menu'
 require_relative 'views/rules'
 require_relative 'models/user_database'
+require_relative 'controller/login_controller'
 
 require 'io/console'
 require 'colorize'
@@ -12,35 +13,21 @@ require 'json'
 puts `clear`
 
 begin
-    puts 'Is this your first time playing Pokemon Rumble? (Y/N)'.colorize(:green)
-    puts 
-    answer = gets.chomp.downcase.strip
-    if answer == 'y'
-        # new_user ideally use this after chat with teacher
-        puts
-        puts "Please pick a username?".colorize(:green)
-        username = gets.chomp.downcase.strip
-        puts "Please pick a 4 digit pin? (make sure you remember it!)".colorize(:green)
-        pin = gets.chomp.strip
-        unless pin.length == 4
-            puts "Pin is not 4 digits...re-enter: ".colorize(:green)
-            pin = gets.chomp.strip
-            puts `clear`
-        end
-    check_for_username(username, pin)
-    elsif answer == 'n'
-       # get_existing_user_info ideally use this after chat with teacher
-        puts "What is your username?".colorize(:green)
-        username = gets.chomp.downcase.strip
-        puts "What is your pin?".colorize(:green)
-        pin = gets.chomp.strip
-        until pin.length == 4
-            puts "Pin is not 4 digits".colorize(:green)
-            pin = gets.chomp.strip
-        end
-        check_user_credentials(username, pin)
+    if check_user_credentials(ARGV[0], ARGV[1]) == true
+        puts "Welcome back #{@player.name}"
+        username, pin = ARGV[0], ARGV[1]
     else
-        'NOT A VALID INPUT...Please enter (Y/N)'.colorize(:red)
+        puts 'Welcome to Pokemon Royal Rumble before we get going...'.colorize(:green)
+        print 'Is this your first time playing Pokemon Rumble? (Y/N)'.colorize(:green)
+        puts 
+        answer = gets.chomp.downcase.strip
+        if answer == 'y'
+            username,pin = new_user
+        elsif answer == 'n'
+            username,pin = get_existing_user_info
+        else
+            'NOT A VALID INPUT...Please enter (Y/N)'.colorize(:red)
+        end
     end
 end until end_loop(username, pin) == true
 
@@ -52,7 +39,7 @@ puts `clear`
 welcome
 welcome_beats.stop
 
-
+# game app loop
 begin
     menu
     cmd = gets.chomp.downcase.strip

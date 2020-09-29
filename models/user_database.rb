@@ -2,15 +2,15 @@ require_relative 'player'
 
 @player = nil
 
-def json_paser
+
+def json_parser
     file = File.read('database.json')
     data_hash = JSON.parse(file)
     return data_hash
 end
 
 def check_for_username(username, pin)
-    file = File.read('database_v1.json')  
-    data_hash = JSON.parse(file)
+    data_hash = json_parser
 
     if data_hash['users'].any?{|hash| hash['username'] == username}        
         puts 'That name is already taken please try another name'
@@ -21,8 +21,7 @@ def check_for_username(username, pin)
 end
 
 def add_new_user(username, pin)
-    file = File.read('database.json')
-    data_hash = JSON.parse(file)
+    data_hash = json_parser
     data_hash['users'].push({"username": username, "pin": pin, "p_wins": 0, "p_losses": 0, "o_wins": 0, "o_losses": 0})
     File.write('database.json', JSON.pretty_generate(data_hash))
     puts 'Username now recorded'
@@ -30,8 +29,7 @@ def add_new_user(username, pin)
 end
 
 def check_user_credentials(username = nil, pin = nil)
-    file = File.read('database.json')
-    data_hash = JSON.parse(file)
+    data_hash = json_parser
     arr = data_hash['users']
     arr.each do |user|
         if user['pin']==pin && user['username']==username
@@ -41,12 +39,11 @@ def check_user_credentials(username = nil, pin = nil)
             next
         end
     end
-    puts 'Incorrect username or pin'
+    # puts 'Incorrect username or pin'
 end
 
 def end_loop(username, pin)
-    file = File.read('database.json')
-    data_hash = JSON.parse(file)
+    data_hash = json_parser
     arr = data_hash['users']
     arr.each do |user|
         if user['pin']==pin && user['username']==username
@@ -61,8 +58,7 @@ end
 def update_points_records(game)
     wins = @player.points_records[:p_wins] +=  game.score[:player]
     losses = @player.points_records[:p_losses] += game.score[:computer] 
-    file = File.read('database.json')
-    data_hash = JSON.parse(file)
+    data_hash = json_parser
     arr = data_hash['users']
     arr.each do |user|
         if user['username'] == @player.name
@@ -75,8 +71,7 @@ end
 
 def update_overall_records(game)
     file = File.read('database.json')
-    data_hash = JSON.parse(file)
-    arr = data_hash['users']
+    data_hash = json_parser
     arr.each do |user|
         if user['username'] == @player.name
             if game.score[:player] > game.score[:computer] 

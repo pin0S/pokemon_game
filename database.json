@@ -4,49 +4,33 @@
       "username": "peter",
       "pin": "3333",
       "p_wins": 36,
-      "p_losses": 47,
-      "o_wins": 27,
-      "o_losses": 31
-    },
-    {
-      "username": "mike",
-      "pin": "3333",
-      "p_wins": 0,
-      "p_losses": 0,
-      "o_wins": 1,
-      "o_losses": 0
+      "p_losses": 30,
+      "o_wins": 40,
+      "o_losses": 30
     },
     {
       "username": "ask_k",
       "pin": "4444",
-      "p_wins": 0,
-      "p_losses": 0,
-      "o_wins": 2,
-      "o_losses": 0
-    },
-    {
-      "username": "luke",
-      "pin": "2222",
-      "p_wins": 0,
-      "p_losses": 1,
-      "o_wins": 0,
+      "p_wins": 300,
+      "p_losses": 50,
+      "o_wins": 100,
       "o_losses": 1
     },
     {
       "username": "brock",
       "pin": "4545",
-      "p_wins": 0,
-      "p_losses": 0,
-      "o_wins": 2,
-      "o_losses": 6
+      "p_wins": 20,
+      "p_losses": 10,
+      "o_wins": 25,
+      "o_losses": 8
     },
     {
-      "username": "pighead",
-      "pin": "1995",
-      "p_wins": 0,
-      "p_losses": 0,
-      "o_wins": 0,
-      "o_losses": 1
+      "username": "misty",
+      "pin": "6666",
+      "p_wins": 80,
+      "p_losses": 30,
+      "o_wins": 50,
+      "o_losses": 30
     }
   ]
 }

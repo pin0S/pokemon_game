@@ -1,29 +1,31 @@
 require_relative '../models/user_database'
 
-#I want to use these functions to clean up my code - how do I send username and pin back to the loop in games.rb
-def new_user(username, pin)
+#login loop to get/set usr details before entering game
+def new_user
     puts
-    puts "Please pick a username?"
+    puts "Okay then please pick a username?".colorize(:green)
     username = gets.chomp.downcase.strip
-    puts "Please pick a 4 digit pin? (make sure you remember it!)"
+    puts "Now please pick a 4 digit pin? (make sure you remember it!)".colorize(:green)
     pin = gets.chomp.strip
     unless pin.length == 4
-        puts "Pin is not 4 digits...re-enter: "
+        puts "That pin is not 4 digits...re-enter: ".colorize(:red)
         pin = gets.chomp.strip
         puts `clear`
     end
     check_for_username(username, pin)
+    return username, pin
 end
 
 
 def get_existing_user_info
-    puts "What is your username?"
+    puts "Welcome back, please enter your username?".colorize(:green)
     username = gets.chomp.downcase.strip
-    puts "What is your pin?"
+    puts "Now please enter your pin?".colorize(:green)
     pin = gets.chomp.strip
     until pin.length == 4
-        puts "Pin is not 4 digits"
+        puts "That pin is not 4 digits".colorize(:red)
         pin = gets.chomp.strip
     end
     check_user_credentials(username, pin)
+    return username, pin
 end

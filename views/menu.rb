@@ -76,12 +76,12 @@ end
 def screen_change
     pastel = Pastel.new
     green  = pastel.on_green(" ")
-    bar = TTY::ProgressBar.new("|:bar|",
+    bar = TTY::ProgressBar.new("loading |:bar|",
         total: 50,
         incomplete: green
     )
     50.times do
-    sleep(0.05)
+    sleep(0.02)
     bar.advance
     end
 end

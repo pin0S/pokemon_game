@@ -15,10 +15,13 @@ def dispatch(cmd)
         rules
         formatter
     when '1'
+        screen_change
         best_of_one
     when '3'
+        screen_change
         best_of_three
     when '5'
+        screen_change
         best_of_five
     when 'b'
         get_leaderboard
