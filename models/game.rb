@@ -15,9 +15,9 @@ class Game
     
     @@battle_music = Music.new('sounds/battle.mp3')
 
-    attr_reader :game_count, :score
+    attr_reader :game_count, :score, :number_of_games
 
-    def initialize(number_of_games)
+    def initialize(number_of_games=0)
         @number_of_games = number_of_games.to_i
         @game_count = 0
         @score = {player: 0, computer: 0}

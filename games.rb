@@ -9,9 +9,9 @@ require 'colorize'
 require 'ruby2d'
 require 'json'
 
-#user authenticated loop
 puts `clear`
 
+#user authenticated loop
 begin
     if check_user_credentials(ARGV[0], ARGV[1]) == true
         puts "Welcome back #{@player.name}"

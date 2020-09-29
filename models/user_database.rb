@@ -38,7 +38,7 @@ def check_user_credentials(username = nil, pin = nil)
             puts "Player record found welcome back #{@player.name}".colorize(:green)
             return true
         else
-            next
+            raise 'RecordNotFound' unless true
         end
     end
     if username != nil && pin != nil 

@@ -31,6 +31,22 @@
       "p_losses": 30,
       "o_wins": 52,
       "o_losses": 31
+    },
+    {
+      "username": "Peter",
+      "pin": 3333,
+      "p_wins": 0,
+      "p_losses": 0,
+      "o_wins": 0,
+      "o_losses": 0
+    },
+    {
+      "username": "Ash_K",
+      "pin": 4444,
+      "p_wins": 0,
+      "p_losses": 0,
+      "o_wins": 0,
+      "o_losses": 0
     }
   ]
 }

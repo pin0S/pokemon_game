@@ -1,25 +1,12 @@
-require_relative '../user_database'
+require_relative '../models/game'
 
-describe 'check usernames' do
-    it 'should return if the username exists or not' do
-        user = check_for_username('Peter', 3333) 
-        expect('That name is already taken please try another name')
+describe 'game/new' do
+    it 'should initialize new games based on number given' do
+        games_3 = Game.new(3)
+        expect(games_3.number_of_games).to eq(3)
     end
-    it 'should enter username if it doesn\'t exists' do
-        new_user = check_for_username('Ash_K', 4444)
-        expect('That name is free, entering it into the record books now')
-    end
-    it 'should output username not found' do
-        not_existing = check_user_credentials('Brock', '2343')
-        expect('username not found')
-    end
-    it 'should output wrong pin' do
-        existing_wrong_pin = check_user_credentials('Peter', '333')
-        expect('incorrect pin, try again')
-    end
-    it 'should output username correct pin' do
-        existing_wrong_pin = check_user_credentials('Peter', '3333')
-        expect('correct pin')
+    it 'should return argument error' do
+        game = Game.new()
+        expect(game.number_of_games).to eq 0
     end
 end
-
