@@ -16,6 +16,7 @@ begin
     if check_user_credentials(ARGV[0], ARGV[1]) == true
         puts "Welcome back #{@player.name}"
         username, pin = ARGV[0], ARGV[1]
+        ARGV.clear
     else
         puts 'Welcome to Pokemon Royal Rumble before we get going...'.colorize(:green)
         print 'Is this your first time playing Pokemon Rumble? (Y/N)'.colorize(:green)
@@ -42,7 +43,7 @@ welcome_beats.stop
 # game app loop
 begin
     menu
-    cmd = gets.chomp.downcase.strip
+    cmd = gets.chomp.downcase.strip 
     dispatch(cmd)
 end until cmd == 'q' 
 

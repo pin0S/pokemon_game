@@ -1,4 +1,5 @@
 require_relative 'player'
+require 'json'
 
 @player = nil
 

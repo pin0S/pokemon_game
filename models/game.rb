@@ -119,7 +119,9 @@ class Game
             puts "Fire beats Grass, you win".white.on_magenta.blink
             player_wins
         else
+            puts
             puts "It's a draw #{@choice.capitalize} and #{@c_choice.capitalize} cancel each other out"
+            puts
         end
     end
     
@@ -135,9 +137,17 @@ class Game
     end
 
     def display_winner
-        @score[:player] > @score[:computer] ? (puts "player wins #{@score[:player]} to #{@score[:computer]}") : (puts "computer wins #{@score[:computer]} to #{@score[:player]}")
-        puts "PRESS ANY KEY TO RETURN TO THE MENU".colorize(:green)
         @@battle_music.stop
+        if @score[:player] > @score[:computer]
+            win=Sound.new('sounds/win.wav')
+            win.play
+            puts "player wins #{@score[:player]} to #{@score[:computer]}"
+        else
+            lose=Sound.new('sounds/lose.mp3') 
+            lose.play
+            puts "computer wins #{@score[:computer]} to #{@score[:player]}" 
+        end
+        puts "PRESS ANY KEY TO RETURN TO THE MENU".colorize(:green)
         STDIN.getch
     end
 
