@@ -22,14 +22,14 @@
       "p_wins": 20,
       "p_losses": 10,
       "o_wins": 25,
-      "o_losses": 8
+      "o_losses": 9
     },
     {
       "username": "misty",
       "pin": "6666",
       "p_wins": 80,
       "p_losses": 30,
-      "o_wins": 50,
+      "o_wins": 51,
       "o_losses": 30
     }
   ]

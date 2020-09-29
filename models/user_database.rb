@@ -34,12 +34,15 @@ def check_user_credentials(username = nil, pin = nil)
     arr.each do |user|
         if user['pin']==pin && user['username']==username
             @player = Player.new(username, pin, points_records = {p_wins: user['p_wins'].to_i, p_losses: user['p_losses'].to_i}, overall_records = {o_wins: user['o_wins'].to_i, o_losses: user['o_losses'].to_i})
+            puts "Player record found welcome back #{@player.name}".colorize(:green)
             return true
         else
             next
         end
     end
-    # puts 'Incorrect username or pin'
+    if username != nil && pin != nil 
+        puts 'Incorrect username or pin'.colorize(:red)
+    end
 end
 
 def end_loop(username, pin)
@@ -72,6 +75,7 @@ end
 def update_overall_records(game)
     file = File.read('database.json')
     data_hash = json_parser
+    arr = data_hash['users']
     arr.each do |user|
         if user['username'] == @player.name
             if game.score[:player] > game.score[:computer] 

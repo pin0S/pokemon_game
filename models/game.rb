@@ -23,10 +23,10 @@ class Game
         @score = {player: 0, computer: 0}
         @choice = nil
         @c_choice = nil
+        @@battle_music.play
     end
 
     def get_player_move
-        @@battle_music.play
         puts 'Choose your starter by typing - {fire | water | grass}'.colorize(:green)
         @choice = gets.chomp.downcase.strip
         until ['fire', 'water', 'grass'].include?(@choice)
@@ -131,15 +131,14 @@ class Game
     def end_of_game
         if @number_of_games == @game_count
             true
-            @@battle_music.stop
         end
     end
 
     def display_winner
         @score[:player] > @score[:computer] ? (puts "player wins #{@score[:player]} to #{@score[:computer]}") : (puts "computer wins #{@score[:computer]} to #{@score[:player]}")
         puts "PRESS ANY KEY TO RETURN TO THE MENU".colorize(:green)
+        @@battle_music.stop
         STDIN.getch
-        
     end
 
 end
