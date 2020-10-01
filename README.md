@@ -41,9 +41,21 @@ The application will utilise conditional loops along with rescues to hanfle erro
 
 The app has also been developed through Test Driven Development(TDD) to ensure errors are accounted for before run time.
 
+## Implementation plan and design
+
+Before writing a single line of code I planned the application out using the above questions. I then mocked up a flowchart which is below and then created an implementation plan using trello.
+
+As I progressed I would add cards to my trello board to work on. However, the key was having an MVP label, this helped to prioritize what I needed to work on to get a functional app. From there it was all cash money.  
+
+You can see the live trello board [here](https://trello.com/b/8HIVbfY4/pokemonrockpaperscissors).
+
+Screenshots of each day during development are located in the documents folder [here](docs/trello)
+
+![Trello board day 1](docs/trello/Trello-24-09-2020.png)
+
 ## Flow Chart of application 
 
-Will add image of flow chart once finished formatting
+![Flowchart for pokemon royal rumble](docs/flowchart.jpg)
 
 ## Instructions
 
@@ -53,19 +65,19 @@ Will add image of flow chart once finished formatting
 - Clone or download the project files onto your local machine. 
 - Open your computers terminal and run the following command:
 
-`$ install bundler`
+```$ install bundler```
 
 - Once bundler has finished installing, enter the following code to install the Gems required to run the application. 
 
-`$ bundle install`
+```$ bundle install```
 
 - For the fisrt time use run the application using the following command to launch it(ensure volume is on).
 
-`$ run_game.sh`
+```$ ./run_game.sh```
 
 - In the future you can bypass the login screen by passing your user name and pin as arguments e.g.
 
-`$ run_game.sh username pin`
+```$ run_game.sh username pin```
 
 ### Dependencies require for the application to run and how to install them
 
@@ -99,3 +111,12 @@ Pokemon Royal Rumble has been tested on MAC OS Catalina Version: 10.15.6.
 * The computer will select their starter at the same time. 
 * The round is then played, if their is a winner results will be displayed otherwise if it is a draw the game will be replayed. 
 * At the end of the game, the users all time record will be updated. Users then can `PRESS ANY KEY` to return to the main menu. 
+
+## Acknowledgements
+
+Thanks to the creators of the gems, my class mates for pushing my to improve my work and code and to my teachers for helping me to help myself.
+
+I found all my ASCII art and text at the below locations. 
+
+* [Here by Maija Haavisto](https://www.asciiart.eu/video-games/pokemon)
+

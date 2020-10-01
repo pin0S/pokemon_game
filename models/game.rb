@@ -30,7 +30,7 @@ class Game
         puts 'Choose your starter by typing - {fire | water | grass}'.colorize(:green)
         @choice = gets.chomp.downcase.strip
         until ['fire', 'water', 'grass'].include?(@choice)
-            puts 'Not a vaild start...try again'
+            puts 'Not a vaild start...try again'.colorize(:red)
             @choice = gets.chomp.downcase.strip
         end
     end
@@ -60,7 +60,7 @@ class Game
         @game_count += 1
         @score[:player] += 1
     end
-    
+
     def check_winner
         
         countdown
@@ -75,11 +75,9 @@ class Game
         elsif @choice == 'water' && @c_choice == "grass"
             #how can I turn this into a helper function
             puts "You choose... "
-            puts squirtle_art
-            sleep(1)
+            puts squirtle_art     
             puts "Computer chooses..."
             puts bulbasaur_art
-            sleep(1)
             puts "Grass beats Water, you lose".white.on_magenta.blink
             computer_wins
         elsif @choice == 'grass' && @c_choice == "fire"
@@ -102,20 +100,16 @@ class Game
             #how can I turn this into a helper function
             puts "You choose... "
             puts bulbasaur_art
-            sleep(1)
             puts "Computer chooses..."
             puts squirtle_art
-            sleep(1)
             puts "Grass beats Water, you win".white.on_magenta.blink
             player_wins
         elsif @choice == 'fire' && @c_choice == "grass"
             #how can I turn this into a helper function
             puts "You choose... "
             puts charmander_art
-            sleep(1)
             puts "Computer chooses..."
             puts bulbasaur_art
-            sleep(1)
             puts "Fire beats Grass, you win".white.on_magenta.blink
             player_wins
         else

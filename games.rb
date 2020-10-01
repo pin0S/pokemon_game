@@ -8,6 +8,7 @@ require 'io/console'
 require 'colorize'
 require 'ruby2d'
 require 'json'
+require 'tty-progressbar'
 
 puts `clear`
 
@@ -18,6 +19,7 @@ begin
         username, pin = ARGV[0], ARGV[1]
         ARGV.clear
     else
+        ARGV.clear
         puts 'Welcome to Pokemon Royal Rumble before we get going...'.colorize(:green)
         print 'Is this your first time playing Pokemon Rumble? (Y/N)'.colorize(:green)
         puts 

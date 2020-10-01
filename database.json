@@ -2,15 +2,15 @@
   "users": [
     {
       "username": "peter",
-      "pin": "3333",
+      "pin": 3333,
       "p_wins": 36,
       "p_losses": 30,
-      "o_wins": 40,
-      "o_losses": 30
+      "o_wins": 44,
+      "o_losses": 31
     },
     {
       "username": "ask_k",
-      "pin": "4444",
+      "pin": 4444,
       "p_wins": 300,
       "p_losses": 50,
       "o_wins": 100,
@@ -18,35 +18,19 @@
     },
     {
       "username": "brock",
-      "pin": "4545",
+      "pin": 4545,
       "p_wins": 20,
       "p_losses": 10,
-      "o_wins": 25,
+      "o_wins": 26,
       "o_losses": 9
     },
     {
       "username": "misty",
-      "pin": "6666",
+      "pin": 6666,
       "p_wins": 80,
       "p_losses": 30,
       "o_wins": 52,
       "o_losses": 31
-    },
-    {
-      "username": "Peter",
-      "pin": 3333,
-      "p_wins": 0,
-      "p_losses": 0,
-      "o_wins": 0,
-      "o_losses": 0
-    },
-    {
-      "username": "Ash_K",
-      "pin": 4444,
-      "p_wins": 0,
-      "p_losses": 0,
-      "o_wins": 0,
-      "o_losses": 0
     }
   ]
 }

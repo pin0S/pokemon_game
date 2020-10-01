@@ -60,16 +60,14 @@ def end_loop(username, pin)
 end
 
 def update_points_records(game)
-    wins = @player.points_records[:p_wins] +=  game.score[:player]
-    losses = @player.points_records[:p_losses] += game.score[:computer] 
     data_hash = json_parser
     arr = data_hash['users']
     arr.each do |user|
         if user['username'] == @player.name
-            user['p_wins'] = wins
-            user['p_losses'] = losses
+            user['p_wins'] = @player.points_records[:p_wins] +=  game.score[:player]
+            user['p_losses'] = @player.points_records[:p_losses] += game.score[:computer]
         end
-    File.write('../database.json', JSON.pretty_generate(data_hash))
+    File.write('database.json', JSON.pretty_generate(data_hash))
     end
 end
 
