@@ -1,5 +1,7 @@
 require_relative 'player'
 
+#TODO implement random names for play to play against in game loop
+
 class Computer < Player
 
     attr_reader :name

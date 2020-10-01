@@ -1,15 +1,10 @@
-# welcome screen
-require 'colorize'
-require 'io/console'
-require 'tty-progressbar'
-
 def formatter
     puts "\nPRESS ANY KEY TO RETURN TO MENU".colorize(:green)
-    STDIN.getch  #Waits for user input (Any Key)
+    STDIN.getch  #waits for user input any key
 end
 
 def welcome
-
+    #welcome screen output
     
     puts "
 ██████╗░░█████╗░██╗░░██╗███████╗███╗░░░███╗░█████╗░███╗░░██╗  
@@ -49,7 +44,8 @@ PRESS ANY KEY TO CONTINUE".colorize(:green)
     STDIN.getch  #Waits for user input (Any Key)
     puts `clear` # Clears screen after
 end
-#menu display
+
+#menu display (This is part of the menu feature - other part is in dispatch loop)
 
 def menu 
     puts `clear`

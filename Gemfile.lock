@@ -20,8 +20,17 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
     ruby2d (0.9.4)
+    strings-ansi (0.1.0)
     text-table (1.2.4)
     tty-color (0.5.2)
+    tty-cursor (0.7.1)
+    tty-progressbar (0.17.0)
+      strings-ansi (~> 0.1.0)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.7)
+      unicode-display_width (~> 1.6)
+    tty-screen (0.8.1)
+    unicode-display_width (1.7.0)
 
 PLATFORMS
   ruby
@@ -33,6 +42,7 @@ DEPENDENCIES
   rspec (~> 3.9)
   ruby2d (~> 0.9.4)
   text-table (~> 1.2)
+  tty-progressbar (~> 0.17.0)
 
 BUNDLED WITH
    2.1.4

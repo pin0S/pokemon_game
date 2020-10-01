@@ -3,10 +3,10 @@
     {
       "username": "peter",
       "pin": 3333,
-      "p_wins": 36,
-      "p_losses": 30,
-      "o_wins": 44,
-      "o_losses": 31
+      "p_wins": 39,
+      "p_losses": 32,
+      "o_wins": 45,
+      "o_losses": 33
     },
     {
       "username": "ask_k",
@@ -20,9 +20,9 @@
       "username": "brock",
       "pin": 4545,
       "p_wins": 20,
-      "p_losses": 10,
+      "p_losses": 11,
       "o_wins": 26,
-      "o_losses": 9
+      "o_losses": 10
     },
     {
       "username": "misty",

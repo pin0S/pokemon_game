@@ -12,7 +12,7 @@ require 'tty-progressbar'
 
 puts `clear`
 
-#user authenticated loop
+#user authenticated loop feature for login and cli login
 begin
     if check_user_credentials(ARGV[0], ARGV[1]) == true
         puts "Welcome back #{@player.name}"
@@ -42,7 +42,7 @@ puts `clear`
 welcome
 welcome_beats.stop
 
-# game app loop
+# game app loop until the game is quit
 begin
     menu
     cmd = gets.chomp.downcase.strip 

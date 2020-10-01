@@ -17,3 +17,5 @@ gem "colorize", "~> 0.8.1"
 gem "ruby2d", "~> 0.9.4"
 
 gem "pastel", "~> 0.8.0"
+
+gem "tty-progressbar", "~> 0.17.0"

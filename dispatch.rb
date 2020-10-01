@@ -1,6 +1,7 @@
-# require_relative 'controller'
 require_relative 'controller/games_controller'
 require_relative 'models/game'
+
+#The dispatch handles errors and inputs for the game sending them the controller (other part of menu feature)
 
 def dispatch(cmd)
     unless ['1','3','5','b','s','q','r'].include?(cmd)

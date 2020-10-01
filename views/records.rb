@@ -1,3 +1,5 @@
+#These are the leaderboard features
+
 def get_leaderboard
     file = File.read('./database.json')
     data_hash = JSON.parse(file)
